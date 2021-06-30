@@ -19,8 +19,9 @@
 <div class="card">
 <div class="card-content">
 <h3 style="margin-top: 10px;" class="center-align">Register here !!</h3>
+<h5 id="msg" class="center-align"></h5>
 <div class="form center-align">
-<form action="Register" method="post">
+<form action="Register" method="post" id="myform">
 <input type="text" name="username" placeholder="Enter User Name">
 <input type="password" name="password" placeholder="Enter User Password">
 <input type="email" name="email" placeholder="Enter User email">
@@ -70,13 +71,47 @@
 </div>
 </div>
 </div>
-<script
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
+<!-- <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-  crossorigin="anonymous"></script>
+  crossorigin="anonymous"></script> -->
   <script>  
 $(document).ready(function(){
 	console.log("page is ready")
+	$("#myform").on('submit',function (event){
+event.preventDefault();
+var f = $(this).serialize();
+console.log(f);
+$(".loader").show();
+$(".form").hide();
+$.ajax({
+	url: "Register",
+	data: f,
+	type: 'POST',
+	success: function(data, textStatus,jqXHR){
+		console.log(data);
+		console.log("success..............");
+		$(".loader").hide();
+		$(".form").show();
+		if(data.trim()==='done'){
+			$('#msg').html("successfully register")
+$('#msg').addClass('green-text')
+			}
+		else{
+			$('#msg').html("somethink on went on server")
+			$('#msg').addClass('red-text')}
+		},
+		error: function(data, textStatus,errorThrown){
+			console.log(data);
+			console.log("error..............");
+			$(".loader").hide();
+			$(".form").show();
+			$('#msg').html("somethink on went on server")
+			$('#msg').addClass('red-text')
+		}
+})
+		})
 })
   </script>
 </body>

@@ -41,21 +41,22 @@ public class Register extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
-		out.println("<!DOCTYPE html>");
-		out.println("<html>");
-		out.println("<head>");
-		out.println("<title>Servlet Register</title>");
-		out.println("</head>");
-		out.println("<body>");
+		/*
+		 * out.println("<!DOCTYPE html>"); out.println("<html>"); out.println("<head>");
+		 * out.println("<title>Servlet Register</title>"); out.println("</head>");
+		 * out.println("<body>");
+		 */
 		//getting the all incoming detail from the request
 		String name = request.getParameter("username");
 		String password = request.getParameter("password");
 		String email = request.getParameter("email");
-		out.println(name);
-		out.println(password);
-		out.println(email);
+		
+		/*
+		 * out.println(name); out.println(password); out.println(email);
+		 */
 		//creating connection
 		try {
+			Thread.sleep(3000);
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Youtube","root","root");
 			String query="insert into user(name,password,email) values(?,?,?)";
@@ -64,14 +65,15 @@ public class Register extends HttpServlet {
 			ps.setString(2, password);
 			ps.setString(3, email);
 			ps.executeUpdate();
-			out.println("<h1>done..............</h1>");
+			out.println("done");
 		}catch (Exception e) {
 			e.printStackTrace();
-			out.println("<h1>error..............</h1>");
+			out.println("error");
 		}
 		//query
-		out.println("</body>");
-		out.println("</html>");
+		/*
+		 * out.println("</body>"); out.println("</html>");
+		 */
 	}
 
 }
