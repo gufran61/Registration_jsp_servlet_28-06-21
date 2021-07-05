@@ -6,19 +6,16 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>!! sory something went wrong</title>
-<style>
-*{
-padding: 0px;
-margin: 0px;
-}
-</style>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
 </head>
 <body>
-<div style="padding: 20px;color: blue; background: gray;">
-<h1>!! sory something went wrong</h1>
-<br>
-<p>note..........</p>
-<p><%=exception %></p>
+<div class="container p-3">
+<img src="404-error.png" class="img-fluid">
+<h1>Sorry ! something went wrong</h1>
 </div>
+
 </body>
 </html>
