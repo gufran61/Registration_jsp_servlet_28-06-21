@@ -9,6 +9,9 @@
 </head>
 <body>
 <%
+response.sendRedirect("index.html");
+%>
+<%
 // fetch two numbers
 String n1=request.getParameter("n1");
 String n2=request.getParameter("n2");
@@ -19,5 +22,6 @@ String n2=request.getParameter("n2");
  int n = a/b;
 %>
 <h1>Result is : <%= n%></h1>
+
 </body>
 </html>

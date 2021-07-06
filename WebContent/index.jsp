@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Welcome Page</title>
 <style>
 *{
 margin:0px;
@@ -53,5 +53,8 @@ out.println("calling reverse "+reverse());
 <%=a %>
 <%=b %>
 <%=name %>
+<br>
+<div>
+<a href="op.jsp">Go to page op.jsp</a></div>
 </body>
 </html>
