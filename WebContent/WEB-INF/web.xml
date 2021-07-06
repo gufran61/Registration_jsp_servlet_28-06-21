@@ -15,7 +15,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>register</servlet-name>
-		<url-pattern>/servlet1</url-pattern>
+		<url-pattern>/Register</url-pattern>
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>s2</servlet-name>
@@ -25,4 +25,13 @@
 		<servlet-name>s2</servlet-name>
 		<url-pattern>/servlet2</url-pattern>
 	</servlet-mapping>
+	<filter>
+	<filter-name>filter1</filter-name>
+	<filter-class>com.user.MyFilter</filter-class>
+	</filter>
+	<filter-mapping>
+	<filter-name>filter1</filter-name>
+	<url-pattern>/Register</url-pattern>
+	<url-pattern>/servlet2</url-pattern>
+	</filter-mapping>
 </web-app>

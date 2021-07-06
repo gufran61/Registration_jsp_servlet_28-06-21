@@ -17,44 +17,9 @@ padding: 0px;
 </style>
 </head>
 <body>
-<%@include file="header.jsp" %>
-<h1>Random Number :</h1>
-<%
-Random r = new Random();
-int n=r.nextInt(10);
-out.println(n);
-%>
-<%=n %>
-<!-- Declarative Tag....... -->
-<%!
-int a =5;
-int b= 10;
-String name="gufran";
-public int dosum(){
-	return a+b;
-}
-public String reverse(){
-	StringBuffer sb = new StringBuffer(name);
-	return sb.reverse().toString();
-}
-%>
-<!-- Scriptlet Tag....... -->
-<%
-out.println(a);
-out.println("<br>");
-out.println(b);
-out.println("<br>");
-out.println("callin sum "+dosum());
-out.println("<br>");
-out.println("calling reverse "+reverse());
-%>
-<!-- Expression Tag............ -->
-<h1>Sum is : <%=dosum() %></h1>
-<%=a %>
-<%=b %>
-<%=name %>
-<br>
-<div>
-<a href="op.jsp">Go to page op.jsp</a></div>
+<form action="servlet2">
+<h1>in servlet 2</h1>
+<button type="submit">Submit</button>
+</form>
 </body>
 </html>
